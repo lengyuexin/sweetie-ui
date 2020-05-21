@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab {
+            width: 600px;
+            height: 400px;
+            box-sizing: border-box;
+            border: 1px solid #333;
+        }
+
+        .tab-title {
+            background-color: #ddd;
+        }
+
+        .tab-title ul {
+            display: flex;
+        }
+
+        .tab-title li {
+            list-style: none;
+            flex: 1;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-title li>a {
+            text-decoration: none;
+        }
+
+        .tab-title li.active {
+            background-color: white;
+        }
+
+        .tab-title li>a:hover {
+            color: orange;
+            font-weight: 700;
+        }
+
+        .tab-body .ct {
+            display: none;
+        }
+
+        .tab-body .ct ul {
+            display: flex;
+        }
+
+        .tab-body .ct ul li {
+            flex: 1;
+            list-style: none;
+        }
+
+        .tab-body .ct:nth-child(1) {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab-title">
+            <ul>
+                <li class="active"><a href="#">页面A</a></li>
+                <li><a href="#">页面B</a></li>
+                <li><a href="#">页面C</a></li>
+                <li><a href="#">页面D</a></li>
+            </ul>
+        </div>
+
+        <div class="tab-body">
+            <div class="ct">
+                <ul>
+                    <li><a href="#">页面A</a></li>
+                    <li><a href="#">页面A</a></li>
+                    <li><a href="#">页面A</a></li>
+                    <li><a href="#">页面A</a></li>
+                </ul>
+            </div>
+            <div class="ct">
+                <ul>
+                    <li><a href="#">页面B</a></li>
+                    <li><a href="#">页面B</a></li>
+                    <li><a href="#">页面B</a></li>
+                    <li><a href="#">页面B</a></li>
+                </ul>
+            </div>
+            <div class="ct">
+                <ul>
+                    <li><a href="#">页面C</a></li>
+                    <li><a href="#">页面C</a></li>
+                    <li><a href="#">页面C</a></li>
+                    <li><a href="#">页面C</a></li>
+                </ul>
+            </div>
+            <div class="ct">
+                <ul>
+                    <li><a href="#">页面D</a></li>
+                    <li><a href="#">页面D</a></li>
+                    <li><a href="#">页面D</a></li>
+                    <li><a href="#">页面D</a></li>
+                </ul>
+            </div>
+            <div class="ct">
+                <ul>
+                    <li><a href="#">页面E</a></li>
+                    <li><a href="#">页面E</a></li>
+                    <li><a href="#">页面E</a></li>
+                    <li><a href="#">页面E</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        var titles = document.querySelectorAll(".tab-title li");
+        var contents = document.querySelectorAll(".ct");
+
+        for (let i = 0; i < titles.length; i++) {
+            // titles[i].id = i;
+            titles[i].onmouseover = function () {
+                for (let j = 0; j < titles.length; j++) {
+                    titles[j].classList.remove("active")
+                    contents[j].style.display="none"
+                }
+                this.classList.add("active")
+                contents[i].style.display="block"
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>

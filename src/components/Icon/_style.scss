@@ -1,0 +1,5 @@
+@each $key, $val in $theme-colors {
+  .sweet-icon-#{$key} {
+    color: $val;
+  }
+}
