@@ -150,7 +150,7 @@ const AutoComplete: FC<AutoCompleteProps> = (props) => {
         timeout={300}
         unmountOnExit
         onExited={() => {
-          setSuggestions([]);
+          // setSuggestions([]);
         }}
       >
         <ul className="sweet-suggestion-list">
